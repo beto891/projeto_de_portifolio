@@ -42,7 +42,7 @@
 
              <div v-if="showWhatsappAlert" class="custom-whatsapp-popup">
                 <div class="popup-content">
-                    <a href="https://wa.me/5598984899760" target="_blank" class="popup-link">
+                    <a href="https://wa.me/5511965743272" target="_blank" class="popup-link">
                         <div class="popup-icon">
                             <i class="fab fa-whatsapp"></i>
                             <span class="online-indicator"></span>

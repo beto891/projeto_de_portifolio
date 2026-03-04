@@ -1,5 +1,7 @@
 <template>
-  
+
+    <fundo3-d/>
+
     <AppNavbar 
       :user="user" 
       :menuLinks="menuLinks" 
@@ -7,40 +9,18 @@
       @toggle-theme="toggleTheme" 
     />
     
-       <Sobre/>
+        <Sobre/>
 
-      <Projetos :projetos="projetos"/>
+        <Projetos :projetos="projetos"/>
 
-        <section id="stack" class="py-5 position-relative overflow-hidden">
-            <div class="position-absolute text-info opacity-10 rellax" data-rellax-speed="-1" style="top: 5%; left: 10%; font-size: 8rem;">
-                <i class="fas fa-code"></i>
-            </div>
-
-            <div class="container position-relative" style="z-index: 2;">
-                <h2 class="text-center mb-5 fw-bold text-white">Stack tecnológica</h2>
-                
-                <div class="row g-4 justify-content-center">
-                    <div v-for="item in techStack" :key="item.titulo" class="col-md-4 rellax" :data-rellax-speed="item.velocidade">
-                        <div class="card h-100 p-4 bg-body-tertiary border-secondary border-opacity-25 card-hover shadow-lg">
-                            <div class="text-info mb-3 fs-1"><i :class="item.icone"></i></div>
-                            <h4 class="fw-bold">{{ item.titulo }}</h4>
-                            <p class="text-secondary small">{{ item.descricao }}</p>
-                            <div class="d-flex flex-wrap gap-2 mt-auto">
-                                <span v-for="tag in item.tags" :key="tag" class="badge bg-dark border border-secondary">
-                                    {{ tag }}
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <AppStack :techStack="techStack"/>
         
         <contato/>
 
         <AppFooter/>
 
-             <div v-if="showWhatsappAlert" class="custom-whatsapp-popup">
+        <!-- Popup do WhatsApp  -->
+        <div v-if="showWhatsappAlert" class="custom-whatsapp-popup">
                 <div class="popup-content">
                     <a href="https://wa.me/5511965743272" target="_blank" class="popup-link">
                         <div class="popup-icon">
@@ -56,7 +36,7 @@
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
-            </div>
+        </div>
 </template>
 
 <script>
@@ -68,25 +48,27 @@ import AppNavbar from './components/AppNavbar.vue';
 import Sobre from './components/Sobre.vue';
 import Projetos from './components/Projetos.vue';
 import Contato from './components/Contato.vue';
+import Fundo3D from './components/Fundo3D.vue';
+import AppStack from './components/AppStack.vue'; 
 //
 
 export default {
-    // 1. Espalhamos a lógica do app.js primeiro
+    //  lógica do app.js - onde estão os dados e métodos principais do app
     ...appLogic, 
 
     // 2. Registramos os componentes manualmente para garantir
     components: {
-        // Se o appLogic já tiver componentes, mantemos eles e adicionamos o Footer
         ...(appLogic.components || {}),
-        AppNavbar, Sobre, Projetos, Contato, AppFooter
+        AppNavbar, Sobre, Projetos, Contato, Fundo3D, AppStack, AppFooter
     }
 }
 </script>
 
 <style>
-@import './assets/css/style.css';
-@import './assets/css/animated_card.css';
-@import './assets/css/whatsapp.css'; 
-@import './assets/css/footer.css';
-@import './assets/css/button_mode.css';
+    @import './assets/css/style.css';
+    @import './assets/css/animated_card.css';
+    @import './assets/css/whatsapp.css'; 
+    @import './assets/css/footer.css';
+    @import './assets/css/button_mode.css';
+    @import './assets/css/contato.css';
 </style>

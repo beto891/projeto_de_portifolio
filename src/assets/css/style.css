@@ -117,11 +117,12 @@ section, header {
 .container {
     position: relative;
     z-index: 10 !important;
+
 }
 
-#projetos, #contato, #stack{
+#projetos, #stack{
     position: relative;
-    min-height: 650px;  /* Ou a altura que você desejar para a seção */
+    min-height: 800px;  /* Ou a altura que você desejar para a seção */
     overflow: hidden;   /* Corta o excesso da imagem de 120% de altura */
     display: flex;
     align-items: center;

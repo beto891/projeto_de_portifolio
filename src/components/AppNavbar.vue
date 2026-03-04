@@ -26,10 +26,8 @@
         </nav>  
 
        <header id="hero" class="text-center py-5 d-flex align-items-center" style="min-height: 100vh;">
-           <!-- <img src="/img/background-img.png" alt="Nebulosa" 
-           class="img-bg rellax position-absolute img-dark w-100 h-100" data-rellax-speed="-3"  style="object-fit: cover; z-index: 0;"> -->
             
-           <img src="/img/background-img.png" class="overlay-img rellax img-dark" style="min-height: 100vh;">
+           <img src="/img/background-img.png" class="overlay-img rellax " >
 
 
             <div id="three-canvas-container" class="position-absolute w-100 h-100 rellax" data-rellax-speed="2" style="z-index: 1; pointer-events: none;"></div>

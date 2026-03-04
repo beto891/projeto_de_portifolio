@@ -6,10 +6,14 @@
                     <div class="col-lg-6 mb-4 mb-lg-0">
                         <h2 class="fw-bold mb-4">Sobre Mim</h2>
                         <p class="lead text-secondary">
-                            Técnico em TI e futuro Analista de Sistemas, unindo suporte operacional e desenvolvimento de software.
+                            Unindo suporte operacional e desenvolvimento de software.
                         </p>
                         <p>
-                            Com uma trajetória consolidada como <strong>Técnico em TI</strong>, especialmente no dinâmico setor de mídia <strong>OOH (Out-of-Home)</strong>, adquiri uma visão prática sobre infraestrutura e resolução de problemas críticos.
+                            Transformo desafios lógicos em código eficiente e escalável. Como <strong>Desenvolvedor</strong>, 
+                            minha especialidade é arquitetar soluções que garantam performance e estabilidade. Recentemente, 
+                            desenvolvi um sistema de checking completo que integra processamento em tempo real via WebSockets e tarefas em segundo plano com Celery.
+
+                            Acompanho o ciclo de vida do desenvolvimento, desde a modelagem de dados com SQLAlchemy até o deploy automatizado em plataformas cloud. Tenho facilidade em identificar e resolver gargalos técnicos complexos, como falhas de conexão de rede, dependências circulares e otimização de build de containers.
                         </p>
                         <p>
                             Atualmente, estou cursando <strong>Análise e Desenvolvimento de Sistemas</strong>. Meu foco é transmutar essa experiência técnica em soluções de software eficientes, utilizando <strong>Python</strong> no backend e <strong>Vue.js</strong> no frontend para criar sistemas escaláveis e inteligentes.

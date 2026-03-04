@@ -1,0 +1,192 @@
+:root {
+    --bg-dark-primary: #000000;    
+    --bg-dark-secondary: #000000;  /* Tom ligeiramente mais claro para cards */
+    --accent-color: #38bdf8;       /* Azul claro para links e botões */
+    --text-main: #f8fafc;
+    --text-muted: #b4b5b9;
+}
+
+body {
+    /* background-color: var(--bg-dark-primary); */
+    color: var(--text-main);
+    font-family: 'Ubuntu', sans-serif;
+    transition: background-color 0.3s ease;
+    overflow-x: hidden;
+}
+
+section, header {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Customização da Navbar */
+.navbar {
+    /* background-color: rgba(15, 23, 42, 0.9) !important; */
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco */
+    /* border-bottom: 1px solid #334155; */
+    z-index: 9999 !important; /* Valor extremamente alto para vencer o parallax */
+    position: sticky;
+    top: 0;
+    color: var(--text-main);
+}
+
+/* Cards de Projetos no Dark Mode */
+.card {
+    background-color: var(--bg-dark-secondary);
+    border: 1px solid #364a66;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.card-title {
+    color: var(--text-main);
+}
+
+.card-text {
+    color: var(--text-muted)!important;
+}
+
+/* Isso afetará todos os cards da seção de projetos */
+#projetos .card {
+    background-color: #1111114d !important; /* Um cinza quase preto para destacar do fundo #000 */
+    border: 1px solid rgba(56, 189, 248, 0.2); /* Borda sutil com a cor accent (azul info) */
+    transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+#projetos .card:hover {
+    border-color: var(--accent-color); /* Brilha a borda com o azul info */
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Garante que o corpo do card também herde a cor */
+#projetos .card-body {
+    background-color: transparent !important;
+}
+
+/* Badges de Tecnologia */
+.badge {
+    background-color: #000000 !important;
+    color: var(--accent-color) !important;
+    border: 1px solid var(--accent-color);
+    font-weight: 500;
+}
+
+/* Botões */
+.btn-primary {
+    background-color: var(--accent-color);
+    border: none;
+    color: var(--bg-dark-primary);
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #7dd3fc;
+    color: var(--bg-dark-primary);
+}
+
+.card-img-top {
+    filter: brightness(0.9) contrast(1.1);
+}
+
+
+.img-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* A altura precisa ser maior que 100% para o Parallax ter "espaço" para correr */
+    height: 120%; 
+    
+    /* O SEGREDO: Mantém a proporção sem achatar */
+    object-fit: cover; 
+    
+    /* Garante que o centro da imagem seja o foco */
+    object-position: center; 
+    
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Garante que o container de texto sempre vença as imagens de fundo */
+.container {
+    position: relative;
+    z-index: 10 !important;
+}
+
+#projetos, #contato, #stack{
+    position: relative;
+    min-height: 650px;  /* Ou a altura que você desejar para a seção */
+    overflow: hidden;   /* Corta o excesso da imagem de 120% de altura */
+    display: flex;
+    align-items: center;
+}
+
+.overlay-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mix-blend-mode: screen;
+    opacity: 0.6;
+    z-index: 1; /* Mantém em nível baixo */
+    pointer-events: none;
+}
+
+#sobre {
+    /* Impede que elementos parallax saiam para os lados */
+    overflow-x: hidden; 
+    /* Garante que o fundo da seção cubra elementos parallax que venham de cima */
+    position: relative; 
+    z-index: 2; 
+    background-color: var(--bs-body-bg);
+    min-height: 650px;
+}
+
+#sobre .rellax {
+    /* Evita que o navegador corte o render ao mover */
+    will-change: transform;
+}
+
+.stack-scroll {
+    display: flex;
+    overflow: hidden;
+    gap: 3rem;
+    padding: 2rem 0;
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.stack-item {
+    font-size: 3.5rem;
+    color: var(--bs-secondary);
+    transition: color 0.3s, transform 0.3s;
+    flex-shrink: 0;
+}
+
+/* Icone da área sobre */
+.stack-item:hover {
+    color: #38bdf8; /* Cor info */
+    transform: scale(1.1);
+}
+
+/* Espaçamento interno da timeline para afastar o texto da linha vertical */
+.border-start {
+    padding-left: 1.9rem !important;
+}
+
+/* Garante que a "bolinha" da timeline fique exatamente sobre a linha */
+.rounded-circle {
+    z-index: 2;
+}
+
+/* Adiciona um espaçamento extra nos títulos da timeline */
+.position-relative h6 {
+    margin-left: 0.5rem;
+}

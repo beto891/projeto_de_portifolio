@@ -1,0 +1,65 @@
+:root {
+    --bg-dark-primary: #000000;    
+    --bg-dark-secondary: #000000;  /* Tom ligeiramente mais claro para cards */
+    --accent-color: #38bdf8;       /* Azul claro para links e botões */
+    --text-main: #f8fafc;
+    --text-muted: #ffffff;
+}
+
+.navbar {
+    /* Um fundo escuro fixo ou semi-transparente para garantir a leitura do texto claro */
+    background-color: rgba(39, 39, 41, 0.151) !important; 
+    backdrop-filter: blur(10px);
+    z-index: 9999 !important;
+    /* height: 50px; */
+}
+
+/* Força as cores da navbar independente do tema do Bootstrap */
+.navbar .nav-link, 
+.navbar .navbar-brand {
+    color: var(--text-main) !important;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Efeito de Hover usando sua cor de destaque (accent-color) */
+.navbar .nav-link:hover, 
+.navbar .navbar-brand:hover {
+    color: var(--accent-color) !important;
+    opacity: 0.8;
+}
+
+/* Ajuste para o ícone de hambúrguer no mobile (força a cor clara) */
+.navbar-toggler {
+    /* border-color: rgba(255, 255, 255, 0.5) !important; */
+    filter: brightness(0) invert(1); /* Inverte a cor do ícone para branco */
+}
+
+/* Variáveis para o Modo Escuro */
+[data-bs-theme="dark"] body {
+    background: linear-gradient(135deg, #070707 0%, #262727 100%) fixed;
+    color: #f8fafc;
+    
+}
+
+/* Variáveis para o Modo Claro */
+[data-bs-theme="light"] body {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%) fixed;
+    color: #313030;
+}
+
+#sobre {
+    /* Gradiente que começa na cor do fundo e termina levemente mais claro */
+    background: linear-gradient(to bottom, var(--bs-body-bg), var(--bs-body-tertiary-bg));
+    padding: 100px 0;
+}
+
+#projetos {
+    /* Gradiente inverso para criar o efeito de "caixa" */
+    background: linear-gradient(to top, var(--bs-body-bg), var(--bs-body-tertiary-bg));
+    padding: 100px 0;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border-color: var(--border-color);
+}
